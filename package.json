@@ -1,0 +1,25 @@
+{
+  "name": "backend-express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node --watch app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@apollo/server": "^4.9.1",
+    "better-sqlite3": "^8.5.1",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "express-jwt": "^8.4.1",
+    "graphql": "^16.8.0",
+    "jsonwebtoken": "^9.0.1",
+    "knex": "^2.5.1",
+    "nanoid": "^4.0.2"
+  },
+  "type": "module"
+}

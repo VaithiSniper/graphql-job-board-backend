@@ -1,0 +1,55 @@
+type Query {
+  job(id:ID!): Job
+  company(id:ID!): Company
+  jobs: [Job!]
+}
+
+"""
+  Represents a job ad for our site
+"""
+type Job {
+  """Unique __ID__ for each job"""
+  id: ID!
+  """__title__ for each job"""
+  title: String!
+  """__date__ for each job, in ISO-8601 format. Ex: `2023-02-20`"""
+  date: String!
+  """__description__ for each job"""
+  description: String
+  """__company__ posting the job"""
+  company: Company
+}
+
+"""
+  Represents a company on our site
+"""
+type Company {
+  """Unique __ID__ for each company"""
+  id: ID! 
+  """__title__ for each company"""
+  name: String!
+  """__description__ for each company"""
+  description: String
+  """__jobs__ at each each company"""
+  jobs: [Job!]!
+}
+
+type Mutation {
+  """To __create__ a __job__"""
+  createJob(input: createJobInput!): Job
+  """To __delete__ a __job__"""
+  deleteJob(id: ID!): Job
+  """To __update__ a __job__"""
+  updateJob(input: updateJobInput!): Job
+}
+
+input updateJobInput{
+  title: String!
+  description: String
+  id: ID!
+}
+
+input createJobInput {
+  title: String!
+  description: String
+}
